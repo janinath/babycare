@@ -1,0 +1,45 @@
+{% extends 'customers/masterpage.html' %} 
+{% load static %}
+{% block content %}
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'customers:login' %}">Login</a>
+  </li>
+</ul>
+<form action="{% url 'customers:signup' %}" onsubmit="return validateForm()" method="post">
+  {% csrf_token %}
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" name="name" id="name" placeholder="Enter your Name" >
+      <p id="nameerror"></p>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" >
+      <p id="emailerror"></p>
+      <label for="mobile"><b>Mobile Number</b></label>
+      <input type="text" name="mob" id="mobile" placeholder="Enter your Mobile Number">
+      <p id="moberror"></p>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pswd" id="pswd1" >
+      <p id="pswd1error"></p>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="pswd2" >
+      <p id="pswd2error"></p>
+      <hr>
+  
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
+{% endblock %}

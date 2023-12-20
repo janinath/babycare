@@ -1,0 +1,62 @@
+{% extends 'seller/masterpages.html' %}
+{% load static %}
+{% block seller_content %}
+<script src=""></script>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Products</span>
+    </div>
+</nav>
+<table class="styled-table" width="100%" class="pagination" id="CustomerProduct">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>status</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for p in product %}
+            <tr>
+                <td>{{p.title}}</td>
+                <td><img src="{{ p.image.url }}" alt="{{ p.title }}" style="width: 50px;"></td>
+                <td>{{p.category}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.quantity}}</td>
+                <td>{{p.status}}</td>
+                <td><a href="{% url 'seller:delete' p.id %}"><button class="btn btn-danger">Delete</button></a></td>
+                
+
+          
+            </tr>
+        {% endfor %}
+        </tr>
+   </tbody>
+   
+</table>
+<div class="pagination">
+    <span class="step-links">
+        {% if product.has_previous %}
+            <a href="?page=1"> first</a>
+            <a href="?page={{ product.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ product.number }} of {{ product.paginator.num_pages }}.
+        </span>
+
+        {% if product.has_next %}
+            <a href="?page={{ product.next_page_number }}">next</a>
+            <a href="?page={{ product.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+
+{% endblock %}

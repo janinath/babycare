@@ -1,0 +1,21 @@
+{% extends 'customers/masterpage.html' %}
+{% block content %}
+<nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customers:logout' %}">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+    <h2>Razorpay Payment Form</h2>
+    <form method="post" action="{% url 'customers:razorpay_payment' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Pay with Razorpay</button>
+    </form>
+{% endblock %}

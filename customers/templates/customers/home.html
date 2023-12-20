@@ -1,0 +1,186 @@
+{% extends 'customers/masterpage.html' %} 
+{% load static %}
+{% block content %}
+<nav>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'customers:signup' %}">SignUp</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'customers:login' %}">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- slider -->
+<div class="row" style="background-color: rgb(160, 179, 183);">
+    <div class="col-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="false" style="float: left;">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active " style="max-width: 500px;">
+                <img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhYnl8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+        
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhYnl8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1345985117/photo/baby-playing-with-plastic-balls.webp?b=1&s=170667a&w=0&k=20&c=t-cnvt_mxU9nYYHFeoXqMYqfu3HottfjA3YyoDwe4cU=" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    <div class="col-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="float: left;">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active " style="max-width: 500px;">
+                <img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhYnl8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+        
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhYnl8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1345985117/photo/baby-playing-with-plastic-balls.webp?b=1&s=170667a&w=0&k=20&c=t-cnvt_mxU9nYYHFeoXqMYqfu3HottfjA3YyoDwe4cU=" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    <div class="col-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="float: left;">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active " >
+                <img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhYnl8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+        
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhYnl8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="...">
+
+              </div>
+              <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/1404040282/photo/new-boy-playing-with-multi-colored-wooden-block-toys.webp?b=1&s=170667a&w=0&k=20&c=K4sOIzkAARSm-pz4vwGF-V_JKsDyqdyW9wNhSzGBSSY=" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+</div>
+<!-- slider end -->
+<!-- cards -->
+<div class="row" style="background-color: rgb(160, 179, 183);">
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img src="https://media.istockphoto.com/id/1076514954/photo/happy-little-girl-in-a-yellow-dress-sitting.webp?b=1&s=170667a&w=0&k=20&c=MGXUXmd46ASA-lWn6-i7r89RswaFSnO7MB6akznXi-w=" class="card-img-top" alt="..." style="object-fit: cover; height: 200px; width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">frock</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Buy now</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFieSUyMHNoYW1wb298ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="..." style="object-fit: cover; height: 200px; width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">shampoo</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Buy now</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6" >
+        <div class="card" style="width: 18rem; ">
+            <img src="https://media.istockphoto.com/id/184963233/photo/towels.webp?b=1&s=170667a&w=0&k=20&c=Yu3jngRei1Z29KYc4ktlVhiNfK7YrfGaCOSqUhT3Ekc=" style="object-fit: cover; height: 200px; width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">towel</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Buy now</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6" >
+        <div class="card" style="width: 18rem; ">
+            <img src="https://media.istockphoto.com/id/873187696/photo/wooden-pyramid-childrens-toy-made-of-colorful-rings-on-a-white-background-3d-rendering.webp?b=1&s=170667a&w=0&k=20&c=R6ZLUgDta3c1qGZuy3txhwxA_0ripY8UGWgqieYPh-4=" class="card-img-top" alt="..." style="object-fit: cover; height: 200px; width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">plays</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Buy now</a>
+            </div>
+          </div>
+    </div>
+</div>
+<!-- first row of cards end here -->
+<!-- second row of cards -->
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3 col-md-3 col-sm-12" >
+        <div class="card" style="width: 18rem;">
+            <img src="https://media.istockphoto.com/id/538203243/photo/different-cosmetic-products.webp?b=1&s=170667a&w=0&k=20&c=3qoSsh1UJCQhOZQi8SZQVirHTvJCWSDUYIYWo1dknnY=" class="card-img-top" alt="..." style="object-fit: cover; height: 150px; width: 100%;">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12" >
+        <div class="card" style="width: 18rem;">
+            <img src="https://media.istockphoto.com/id/1287372134/photo/baby-girl-little-hands-touching-opened-white-cream-jar-on-light-pink-table-background-pastel.webp?b=1&s=170667a&w=0&k=20&c=5HqQ97wc_mBY71ZpdH3OjoIiYqm_UNwQvu3C5maxBSA=" class="card-img-top" alt="..." style="object-fit: cover; height: 150px; width: 100%;">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12" >
+        <div class="card" style="width: 18rem;">
+            <img src="https://media.istockphoto.com/id/1199932122/photo/hands-with-a-bottle-and-natural-cosmetic-bottles-shampoo-lotion-shower-gel-and-other-products.webp?b=1&s=170667a&w=0&k=20&c=pfXFHO5xUPnEnjz9_9y9HQVqO3z4djoJ2vztV-5fIOM=" class="card-img-top" alt="..." style="object-fit: cover; height: 150px; width: 100%;">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+    </div>
+</div>
+ 
+
+{% endblock %}

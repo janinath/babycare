@@ -1,0 +1,35 @@
+{% extends 'customers/masterpage.html' %} 
+{% load static %}
+{% block content %}
+<nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customers:logout' %}">Logout</a>
+      </li>
+    </ul>
+  </nav>
+<form action="{% url 'customers:viewpdt' pd.id %}" method="post">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 pt-2">
+            <div class="row">
+                {% for product in p %}
+                <div class="col-md">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ product.img.url }}" class="card-img-top" style="height: 250px; width: 100%;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.title }}</h5>
+                            <br><p> Rs. {{ product.price }}</p>
+                            <a href="{% url 'customers:pay' product.id %}" class="btn btn-primary">Pay Now</a>
+                        </div>
+                    </div>
+                </div> {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

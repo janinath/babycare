@@ -1,0 +1,54 @@
+{% extends 'customers/masterpage.html' %} 
+{% load static %}
+{% block content %}
+
+<nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customers:logout' %}">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+    
+
+  
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 pt-2">
+                <div class="row">
+                    {% for product in pd|slice:":3" %}
+                    <div class="col-md">
+                        <div class="card" style="width: 18rem;">
+                          <img src="{{ product.image.url }}" class="card-img-top" style="height: 250px; width: 100%;" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.title }}</h5>
+                                <p class="card-text">{{ product.desc }} <br> Rs. {{ product.price }}</p>
+                                <a href="{% url 'customers:viewpdt' product.id %}" class="btn btn-primary">view</a>
+                            </div>
+                        </div>
+                    </div> {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination Links -->
+<div class="container-fluid mt-4">
+  <div class="row">
+      <div class="col-md-12">
+          <ul class="pagination justify-content-center">
+              {% for i in page_range %}
+                  <li class="page-item{% if i == page %} active{% endif %}">
+                      <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                  </li>
+              {% endfor %}
+          </ul>
+      </div>
+  </div>
+</div>
+{% endblock %}

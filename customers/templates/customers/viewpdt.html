@@ -1,0 +1,49 @@
+{% extends 'customers/masterpage.html' %} 
+{% load static %}
+{% block content %}
+<nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customers:logout' %}">Logout</a>
+      </li>
+    </ul>
+  </nav>
+<form action="{% url 'customers:viewpdt' pd.id %}" method="post">
+    {% csrf_token %}
+<!-- product image -->
+<div class="col-md-8">
+    <img src="{{pd.image.url}}" at="" class="card-img-top" style="height: 250px; width: 30%;" name="image">
+</div>
+<!-- product details -->
+
+    <div class="col-md-4">
+        <h3 name="title">{{pd.title}}</h3>
+        <h6>{{pd.description}}</h6>
+        <button type="button" class="btn-xs rounded-3 btn-success" disabled>4.5 stars</button>
+        <h4 style="display: inline;" class="p-1" name="price">Rs. {{pd.price}}</h4> <br><br>
+        <input type="number" name="quantity" id="quantity" value="1" min="1" placeholder="Enter the quantity"> <br><br>
+        <!-- <p id="addcart" style="color: blue; font-size: 15px; font-weight: bolder;">{{msg}}</p> -->
+        {% if msg %}
+    <p id="addcart" style="color: blue; font-size: 15px; font-weight: bolder;">{{ msg }}</p>
+        {% endif %}
+        <p name="total"></p>
+        <button type="submit" id="btn_add"  class="btn btn-primary" >Add to Cart</button>
+        <a class="btn btn-primary" href="{% url 'customers:cart' %}">View Cart</a>
+    
+    </div>
+</form>
+
+<script>
+   
+        setTimeout(function() {
+            document.getElementById('addcart').style.display = 'none';
+        }, 2000);  // 3000 milliseconds = 3 seconds
+   
+
+</script>
+
+{% endblock %}

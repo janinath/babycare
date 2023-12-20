@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/homes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/masterpages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signups.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logins.css' %}">
+    <link rel="stylesheet" href="{% static 'css/viewproduct.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">BaBy </span>
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      User
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Manage Account</a></li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                      
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                        </div>
+            </div>
+        </div>
+        
+  </div>
+
+    </nav> 
+    <div class="d-flex" id="wrapper">
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="theme-color list-group list-group-flush">
+                <a href="{% url 'seller:homes' %}" class="bg-light list-group-item list-group-item-action font-weight-bold" id="home">Home</a>
+                <a href="{% url 'seller:viewproduct' %}" class="bg-light list-group-item list-group-item-action font-weight-bold" id="products">All Products</a>
+                <a href="{% url 'seller:addproduct' %}" class="bg-light list-group-item list-group-item-action font-weight-bold" id="addProduct">Add a Product</a>
+            </div>
+        </div>
+            <div class="container-fluid" id="content">
+                {% block seller_content %} {% endblock %}
+            </div>
+        </div>
+    
+    
+    
+    <!-- footer -->
+    
+<footer class="foot text-center text-lg-start" style="background-color: rgb(127, 191, 255); " >
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-lg-6 col-mg-12 mb-4 mb-md-0">
+                <h5>Address</h5>
+                <p>Lorem ipsum dolor sit amet.lorem</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0" style="text-align: left;" >
+                <h5>POLICY</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#" class="text-dark">Return policy</a></li>
+                    <li><a href="#" class="text-dark">terms</a></li>
+                    <li><a href="#" class="text-dark">security</a></li>
+                    <li><a href="#" class="text-dark">privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0" style="text-align: left;" >
+                <h5>ABOUT</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#" class="text-dark">contact</a></li>
+                    <li><a href="#" class="text-dark">about us</a></li>
+                    <li><a href="#" class="text-dark">careers</a></li>
+                    <li><a href="#" class="text-dark">lorem ipsum</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0" style="text-align: left;" >
+                <h5>SOCIAL</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#" class="text-dark">instagram</a></li>
+                    <li><a href="#" class="text-dark">facebook</a></li>
+                    <li><a href="#" class="text-dark">youtube</a></li>
+                    <li><a href="#" class="text-dark">privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgb(0, 106, 255);">
+            <img src="{% static 'images/card.jpeg' %}" alt="">
+
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

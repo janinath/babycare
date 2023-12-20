@@ -1,0 +1,76 @@
+{% extends 'seller/masterpages.html' %}
+{% load static %}
+{% block seller_content %}
+<div class="py-5 text-left">
+    <h2>Add Product</h2>
+</div>
+<div class="row">
+    <div class="col-12 col-md-12 col-lg-12 order-md-1" style="border: 1px solid black;">
+        <form action="" method="post" class="needs-validation" novalidate enctype="multipart/form-data" id="add_product" onload="resetSelection();">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="">Title</label>
+                <div class="input-group">
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Title of the Product" required>
+                    <div class="invalid-feedback">Product title is required</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Description</label>
+                <div class="input-group">
+                    <textarea name="description" id="" cols="30" rows="10" class="form-control" id="Description" required></textarea>
+                    <div class="invalid-feedback">Please enter a description about the product</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Upload product pictures</label>
+                <input type="file" name="image" id="customFile" placeholder="choose" class="form-control" required>
+                <div class="invalid-feedback">Please Upload a Picture</div>
+            </div>
+            <div class="mb-3">
+                <label for="">Price</label>
+                <div class="input-group">
+                    <input type="number" name="price" id="price" class="form-control" placeholder="0.0" required>
+                    <div class="invalid-feedback">Please enter the price</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Quantity</label>
+                <div class="input-group">
+                    <input type="text" name="quantity" id="quantity" class="form-control" placeholder="Enter the quantity" required>
+                    <div class="invalid-feedback">Please enter the Quantity</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Category</label>
+                <select name="category" id="category" class="custom-select d-block w-100" size="1" required>
+                    <option value="" disable selected>Choose</option>
+                    <option value="toys">Toys</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="Footwear">Footwear</option>
+                    <option value="skin care">Skin Care Products</option>
+
+                </select>
+                <div class="invalid-feedback">Please select a category</div>
+            </div>
+            <div class="mb-3">
+                <label for="">Status</label>
+                <div class="input-group">
+                    <input type="text" name="status" id="status" class="form-control" placeholder="Status of the Product" required>
+                    <div class="invalid-feedback">Status is required</div>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+        </form>
+    </div>
+</div>
+{% endblock %}

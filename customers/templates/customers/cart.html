@@ -1,0 +1,55 @@
+{% extends 'customers/masterpage.html' %} 
+{% load static %}
+{% block content %}
+<nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customers:logout' %}">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+<h1>Your Cart</h1>
+
+
+
+{% if cart_items %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 pt-2">
+            <div class="row">
+                {% for item in cart_items %}
+                <div class="col-md">
+                    <div class="card" style="width: 18rem;">
+                      <img src="{{ item.p_image.url }}" class="card-img-top" style="height: 250px; width: 100%;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.p_name }}</h5>
+                            Rs. {{ item.p_price }}</p> 
+                             
+                                <p>Quantity: {{ item.p_quantity }}</p>
+                            
+                             <p>Total price {{ item.p_total }}</p>
+                             <form method="POST" action="{% url 'customers:razorpay_payment' %}">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+
+                                <input type="submit" value="Pay with Razorpay">
+                            </form>
+                             <a href="{% url 'customers:deletecartitem' item.id %}"><button class="btn-btn-danger">Delete</button></a>
+                        </div>
+                    </div>
+                </div> {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+
+{% endblock %}
+

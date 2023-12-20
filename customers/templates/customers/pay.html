@@ -1,0 +1,19 @@
+{% extends 'customers/masterpage.html' %}
+{% block content %}
+<nav>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'customers:home' %}">Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'customers:logout' %}">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+    <h2>Razorpay Payment Success</h2>
+    <p>Payment successful!</p>
+    <p>Order ID: {{ order.id }}</p>
+    <p>Amount: Rs. {{ order.amount / 100 }}</p>
+{% endblock %}
